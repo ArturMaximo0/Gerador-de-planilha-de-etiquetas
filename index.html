@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f4ef">
+    <title>Etiquetas prontas para imprimir</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #242820;
+        background: #f5f4ef;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        background:
+          radial-gradient(ellipse at 12% 10%, #e8eee1 0, transparent 34rem),
+          #f5f4ef;
+      }
+
+      main {
+        width: min(100% - 32px, 760px);
+        margin: 0 auto;
+        padding: 72px 0 56px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 18px;
+        color: #546346;
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #819267;
+        content: "";
+      }
+
+      h1 {
+        max-width: 610px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(38px, 7vw, 58px);
+        font-weight: 500;
+        letter-spacing: -.045em;
+        line-height: 1.04;
+      }
+
+      .intro {
+        max-width: 540px;
+        margin: 18px 0 34px;
+        color: #666b60;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .panel {
+        padding: clamp(22px, 5vw, 38px);
+        border: 1px solid #e4e3da;
+        border-radius: 18px;
+        background: rgba(255, 255, 252, .9);
+        box-shadow: 0 18px 55px rgba(48, 52, 39, .07);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        height: 58px;
+        padding: 0 16px;
+        border: 1px solid #d5d7ca;
+        border-radius: 10px;
+        outline: none;
+        background: #fff;
+        color: #242820;
+        font: inherit;
+        font-size: 17px;
+        transition: border-color .15s, box-shadow .15s;
+      }
+
+      input:focus {
+        border-color: #687c51;
+        box-shadow: 0 0 0 3px rgba(104, 124, 81, .14);
+      }
+
+      .hint {
+        margin: 9px 0 0;
+        color: #777b70;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      button {
+        display: flex;
+        width: 100%;
+        min-height: 54px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+        border: 0;
+        border-radius: 10px;
+        background: #455538;
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-size: 15px;
+        font-weight: 700;
+        transition: background .15s, transform .15s;
+      }
+
+      button:hover { background: #35442b; }
+      button:active { transform: translateY(1px); }
+      button:disabled { cursor: wait; opacity: .7; }
+      button svg { width: 19px; height: 19px; }
+
+      .status {
+        min-height: 22px;
+        margin: 14px 0 0;
+        color: #a13e31;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .status.success { color: #455538; }
+
+      .preview {
+        margin-top: 30px;
+        overflow: hidden;
+        border: 1px solid #e5e4dc;
+        border-radius: 12px;
+        background: #fff;
+      }
+
+      .preview-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px;
+        border-bottom: 1px solid #e9e8e1;
+        color: #73766c;
+        font-size: 12px;
+      }
+
+      .preview-grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .preview-label {
+        display: flex;
+        min-height: 52px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 5px 3px;
+        border-right: 1px solid #e9e8e1;
+        border-bottom: 1px solid #e9e8e1;
+        color: #38412f;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(8px, 2.2vw, 11px);
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .preview-label:nth-child(6n) { border-right: 0; }
+      .preview-label:nth-last-child(-n + 6) { border-bottom: 0; }
+
+      @media (max-width: 520px) {
+        main { padding-top: 48px; }
+        .preview-label { min-height: 42px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Impressão de etiquetas</p>
+      <h1>Suas etiquetas, do seu jeito.</h1>
+      <p class="intro">
+        Digite o nome do tempero ou qualquer outro texto. Em instantes, você baixa
+        a folha pronta para imprimir no mesmo formato do modelo.
+      </p>
+
+      <section class="panel" aria-labelledby="form-title">
+        <form id="label-form">
+          <label for="label-text" id="form-title">Texto das etiquetas</label>
+          <input
+            id="label-text"
+            name="texto"
+            type="text"
+            maxlength="500"
+            placeholder="Ex.: Alecrim"
+            autocomplete="off"
+            required
+          >
+          <p class="hint">O texto será repetido nas 120 etiquetas da folha. Textos curtos tendem a imprimir melhor.</p>
+          <button id="submit-button" type="submit">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Gerar e baixar etiquetas</span>
+          </button>
+          <p class="status" id="status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="preview" aria-label="Prévia ilustrativa da folha de etiquetas">
+          <div class="preview-heading">
+            <span>PRÉVIA DA FOLHA</span>
+            <span>6 colunas · 20 linhas · 120 etiquetas</span>
+          </div>
+          <div class="preview-grid" id="preview-grid"></div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const form = document.querySelector("#label-form");
+      const field = document.querySelector("#label-text");
+      const button = document.querySelector("#submit-button");
+      const status = document.querySelector("#status");
+      const preview = document.querySelector("#preview-grid");
+
+      for (let index = 0; index < 12; index += 1) {
+        const label = document.createElement("div");
+        label.className = "preview-label";
+        preview.append(label);
+      }
+
+      function updatePreview() {
+        const text = field.value.trim() || "ALECRIM";
+        preview.querySelectorAll(".preview-label").forEach((label) => {
+          label.textContent = text;
+          label.title = text;
+        });
+      }
+
+      field.addEventListener("input", updatePreview);
+      updatePreview();
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const text = field.value.trim();
+        if (!text) {
+          field.focus();
+          return;
+        }
+
+        button.disabled = true;
+        button.querySelector("span").textContent = "Preparando seu arquivo...";
+        status.className = "status";
+        status.textContent = "";
+
+        try {
+          const response = await fetch("/gerar", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ texto: text }),
+          });
+          if (!response.ok) {
+            const result = await response.json();
+            throw new Error(result.erro || "Não foi possível gerar o arquivo.");
+          }
+
+          const blob = await response.blob();
+          const downloadUrl = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.href = downloadUrl;
+          const disposition = response.headers.get("Content-Disposition") || "";
+          const filename = disposition.match(/filename="([^"]+)"/);
+          link.download = filename ? filename[1] : "etiquetas-personalizadas.docx";
+          document.body.append(link);
+          link.click();
+          link.remove();
+          URL.revokeObjectURL(downloadUrl);
+          status.className = "status success";
+          status.textContent = "Arquivo gerado. Confira a pasta de downloads.";
+        } catch (error) {
+          status.textContent = error.message || "Não foi possível gerar o arquivo.";
+        } finally {
+          button.disabled = false;
+          button.querySelector("span").textContent = "Gerar e baixar etiquetas";
+        }
+      });
+    </script>
+  </body>
+</html>
