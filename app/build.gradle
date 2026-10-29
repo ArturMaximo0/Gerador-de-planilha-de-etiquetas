@@ -1,0 +1,35 @@
+plugins {
+    id "com.android.application"
+}
+
+android {
+    namespace "com.arturmaximo.etiquetas"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.arturmaximo.etiquetas"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core:1.15.0"
+    testImplementation "junit:junit:4.13.2"
+}
+
+tasks.withType(Test).configureEach {
+    systemProperty "label.template.path", rootProject.file("6.docx").absolutePath
+}
